@@ -3,6 +3,7 @@ using NUnit;
 using NUnit.Core;
 using NUnit.Framework;
 using MSNChatCombinator;
+using MSNMessageLibrary;
 namespace MSNUnitTest
 {
 	/// <summary>
@@ -25,14 +26,14 @@ namespace MSNUnitTest
 		/// To  test source type
 		/// </summary>
 		[Test]
-		public void TestDigSourceType()
+		public void TestCombineDirecotry()
 		{
-			CombineMSNDirectory combineMSN=new CombineMSNDirectory(dirPath1,dirPath2);
-			Assert.AreEqual( combineMSN.DigSourceType(@"C:"),MSNSourceType.Directory);
-			Assert.AreEqual( combineMSN.DigSourceType(@"C\:"),MSNSourceType.Directory);
-			Assert.AreEqual( combineMSN.DigSourceType(@"C\:12.txt"),MSNSourceType.File);
-			Assert.AreEqual( combineMSN.DigSourceType(@"C\:12.txt.txt"),MSNSourceType.File);
-
+			MSNChatCombinator.CombineMSNDirectory combine=
+				new CombineMSNDirectory( @"E:\Work\MSN\Test\msn1",MSNSourceType.Directory,
+				                                                    @"E:\Work\MSN\Test\msn",MSNSourceType.Directory,
+				                                                   @"E:\Work\MSN\Test\msn-combine",
+				                                                    @"E:\Work\MSN\Test\msn1\MessageLog.xsl");
+			combine.Process();
 		}
 	}
 }

@@ -189,9 +189,12 @@ namespace MSNMessageLibrary
 			{
 				FileInfo src=new FileInfo(this.XSLFilePathSrc);		
 				FileInfo dest=new FileInfo(this.SavedDocument.Path);		
-				strDest=dest.DirectoryName+src.Name;
+				strDest=dest.DirectoryName+"\\"+src.Name;
 				if(!XSLFilePathSrc.Equals(strDest))				   
 				{
+					if(!Directory.Exists(dest.DirectoryName))
+						Directory.CreateDirectory(dest.DirectoryName);
+
 					File.Copy(this.XSLFilePathSrc,strDest,true);
 				}
 			}
@@ -601,6 +604,13 @@ namespace MSNMessageLibrary
 		/// Format
 		/// </summary>
 		public MSNChatHistoryFormat Format=MSNChatHistoryFormat.MSN;
+
+
+		/// <summary>
+		/// MSN source type.
+		/// </summary>
+		public MSNSourceType SourceType=MSNSourceType.File;
+
 
 	};
 }
