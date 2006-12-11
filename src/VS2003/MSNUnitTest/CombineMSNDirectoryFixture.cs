@@ -28,12 +28,82 @@ namespace MSNUnitTest
 		[Test]
 		public void TestCombineDirecotry()
 		{
+			MSNFILESTRUCT path1=new MSNFILESTRUCT();
+			path1.Format=MSNChatHistoryFormat.MSN;
+			path1.Path=@"E:\Work\MSN\Test\msn1";
+			path1.SourceType=MSNSourceType.Directory;
+
+			MSNFILESTRUCT path2=new MSNFILESTRUCT();
+			path2.Format=MSNChatHistoryFormat.MSN;
+			path2.Path=@"E:\Work\MSN\Test\msn";
+			path2.SourceType=MSNSourceType.Directory;
+
+			MSNFILESTRUCT savePath=new MSNFILESTRUCT();
+			savePath.Format=MSNChatHistoryFormat.MSN;
+			savePath.Path=@"E:\Work\MSN\Test\msn-combine";
+			savePath.SourceType=MSNSourceType.Directory;
+
+												  
 			MSNChatCombinator.CombineMSNDirectory combine=
-				new CombineMSNDirectory( @"E:\Work\MSN\Test\msn1",MSNSourceType.Directory,
-				                                                    @"E:\Work\MSN\Test\msn",MSNSourceType.Directory,
-				                                                   @"E:\Work\MSN\Test\msn-combine",
-				                                                    @"E:\Work\MSN\Test\msn1\MessageLog.xsl");
+				new CombineMSNDirectory(path1,path2,savePath, @"E:\Work\MSN\Test\msn1\MessageLog.xsl");
+combine.OnSetProgressText=new MSNMessageLibrary.MSNDocumentCombine.SetProgressText(hello);
 			combine.Process();
+		}
+
+		[Test]
+		public void TestCombineBoth()
+		{
+			MSNFILESTRUCT path1=new MSNFILESTRUCT();
+			path1.Format=MSNChatHistoryFormat.MSN;
+			path1.Path=@"E:\Work\MSN\Test\msn1";
+			path1.SourceType=MSNSourceType.Directory;
+
+			MSNFILESTRUCT path2=new MSNFILESTRUCT();
+			path2.Format=MSNChatHistoryFormat.MSN;
+			path2.Path=@"E:\Work\MSN\Test\msn\abeen_82983864523236.xml";
+			path2.SourceType=MSNSourceType.File;
+
+			MSNFILESTRUCT savePath=new MSNFILESTRUCT();
+			savePath.Format=MSNChatHistoryFormat.MSN;
+			savePath.Path=@"E:\Work\MSN\Test\msn-combine";
+			savePath.SourceType=MSNSourceType.Directory;
+
+												  
+			MSNChatCombinator.CombineMSNDirectory combine=
+				new CombineMSNDirectory(path1,path2,savePath, @"E:\Work\MSN\Test\msn1\MessageLog.xsl");
+
+            combine.OnSetProgressText=new MSNMessageLibrary.MSNDocumentCombine.SetProgressText(hello);
+			combine.Process();
+		}
+
+		[Test]
+		public void TestCombineFile()
+		{
+			MSNFILESTRUCT path1=new MSNFILESTRUCT();
+			path1.Format=MSNChatHistoryFormat.MSN;
+			path1.Path=@"E:\Work\MSN\Test\msn1\abeen_82983864523236.xml";
+			path1.SourceType=MSNSourceType.File;
+
+			MSNFILESTRUCT path2=new MSNFILESTRUCT();
+			path2.Format=MSNChatHistoryFormat.MSN;
+			path2.Path=@"E:\Work\MSN\Test\msn\abeen_82983864523236.xml";
+			path2.SourceType=MSNSourceType.File;
+
+			MSNFILESTRUCT savePath=new MSNFILESTRUCT();
+			savePath.Format=MSNChatHistoryFormat.MSN;
+			savePath.Path=@"E:\Work\MSN\Test\msn-combine\abeen_82983864523236.xml";
+			savePath.SourceType=MSNSourceType.File;
+
+												  
+			MSNChatCombinator.CombineMSNDirectory combine=
+				new CombineMSNDirectory(path1,path2,savePath, @"E:\Work\MSN\Test\msn1\MessageLog.xsl");
+
+			combine.OnSetProgressText=new MSNMessageLibrary.MSNDocumentCombine.SetProgressText(hello);
+			combine.Process();
+		}
+		public void hello(string s)
+		{
+
 		}
 	}
 }
