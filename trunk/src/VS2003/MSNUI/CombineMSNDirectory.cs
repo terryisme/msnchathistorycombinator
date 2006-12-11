@@ -14,13 +14,12 @@ namespace MSNChatCombinator
 	/// </remarks>
    public  class CombineMSNDirectory
 	{
-		private string  m_strPath1;
-		private string m_strPath2;
-		private MSNSourceType m_type1;
-	    private MSNSourceType m_type2;
-	    private string m_strSavedPath; 
+		private MSNFILESTRUCT  m_path1;
+		private MSNFILESTRUCT m_path2;
+	    private MSNFILESTRUCT m_savedPath; 
 	    private string m_strExceptionDuringProcess=string.Empty;
-	   private string m_strXslPath;
+	    private string m_strXslPath;
+	   MSNMessageLibrary.MSNDocumentCombine.SetProgressText  m_spt;
 
 	   /// <summary>
 	   /// Construction.
@@ -29,17 +28,17 @@ namespace MSNChatCombinator
 	   /// <param name="type1">The type, file or directory for path1..</param>
 	   /// <param name="path2">The path of file/directory 2</param>
 	   /// <param name="type2">The type of path2.</param>
-		public CombineMSNDirectory(string path1,MSNSourceType type1,string path2,MSNSourceType type2,string savedPath,string XslPath)
+		public CombineMSNDirectory(MSNFILESTRUCT path1,MSNFILESTRUCT path2,MSNFILESTRUCT savedPath,string XslPath):this(path1,path2,savedPath)
 		{
-			m_strPath1=path1;
-			m_strPath2=path2;
-			m_type2=type2;
-			m_type1=type1;
-			m_strSavedPath=savedPath;
-			m_strXslPath=XslPath;
-
-			
+			m_strXslPath=XslPath;			
 		}
+
+	   public CombineMSNDirectory(MSNFILESTRUCT path1,MSNFILESTRUCT path2,MSNFILESTRUCT savedPath)
+	   {
+		   m_path1=path1;
+		   m_path2=path2;
+		   m_savedPath=savedPath;
+	   }
 
 	   public bool Process()
 	   {
@@ -52,20 +51,35 @@ namespace MSNChatCombinator
 		   Hashtable htPath2=new Hashtable();
 
 		   //Step1.1 Iterate the path1. process when only directory
-		   if(MSNSourceType.Directory== m_type1)
-			   htPath1=GetSubFiles(m_strPath1);
+		   if(MSNSourceType.Directory== m_path1.SourceType)
+			   htPath1=GetSubFiles(m_path1.Path);
+		   else
+			   htPath1.Add(m_path1.Path,false);
 
 		   //Step1.2 Iterate path2
-		   if(MSNSourceType.Directory==m_type2)
-			   htPath2=GetSubFiles(m_strPath2);
+		   if(MSNSourceType.Directory==m_path2.SourceType)
+			   htPath2=GetSubFiles(m_path2.Path);
+		   else
+			   htPath2.Add(m_path2.Path,false);
+
+		   string pathDir1=m_path1.Path;
+		   if(m_path1.SourceType==MSNSourceType.File)
+		   {
+			   pathDir1=new FileInfo(m_path1.Path).DirectoryName;
+		   }
+		   string pathDir2=m_path2.Path;
+		   if(m_path2.SourceType==MSNSourceType.File)
+		   {
+			   pathDir2=new FileInfo(m_path2.Path).DirectoryName;
+		   }
 
 		   //Step2:Compare and combine
 
 		   //Step2.1 Process the files in path1
-		   ProcessMSNDirectory(htPath1,htPath2,m_strPath2);
+		   ProcessMSNDirectory(htPath1,htPath2,pathDir2);
 
 		   //Step2.2 Porcess the files in Path2
-		   ProcessMSNDirectory(htPath2,htPath1,m_strPath1);
+		   ProcessMSNDirectory(htPath2,htPath1,pathDir1);
 		   return true;
 	   }
 
@@ -76,25 +90,25 @@ namespace MSNChatCombinator
 	   /// <returns></returns>
 	   private bool Check()
 	   {
-		   if(m_strPath1==null||m_strPath1==string.Empty)
+		   if(m_path1.Path==null||m_path1.Path==string.Empty)
 		   {
 			   m_strExceptionDuringProcess=  "The path 1 is empty!";
 			   return false;
 		   }
 
-		   if(m_strPath2==null||m_strPath2==string.Empty)
+		   if(m_path2.Path==null||m_path2.Path==string.Empty)
 		   {
 			   m_strExceptionDuringProcess= "The path 2 is empty";
 			   return false;
 		   }
 
-		   if(m_strSavedPath==null||m_strSavedPath==string.Empty)
+		   if(m_savedPath.Path==null||m_savedPath.Path==string.Empty)
 		   {
 			   m_strExceptionDuringProcess= "The saved path is empty";
 			   return false;
 		   }
 		   
-		  return IsExisting(m_strPath1)&&IsExisting(m_strPath2);
+		  return IsExisting(m_path1.Path)&&IsExisting(m_path2.Path);
 	   }
 
 	   /// <summary>
@@ -162,18 +176,23 @@ namespace MSNChatCombinator
 				   docCombine.XSLFilePathSrc=m_strXslPath;
 
 				   docCombine.SavedDocument.Format=MSNChatHistoryFormat.MSN;
-				   docCombine.SavedDocument.Path=m_strSavedPath+"\\"+new FileInfo(aKey.ToString()).Name;
+				   if(m_savedPath.SourceType==MSNSourceType.Directory)
+				   {
+					   docCombine.SavedDocument.Path=m_savedPath.Path+"\\"+new FileInfo(aKey.ToString()).Name;
+				   }
+				   else
+					    docCombine.SavedDocument.Path=new FileInfo(m_savedPath.Path).DirectoryName+"\\"+new FileInfo(aKey.ToString()).Name;
 
-				   docCombine.OnSetProgressText=new MSNMessageLibrary.MSNDocumentCombine.SetProgressText(hello);
+				   docCombine.OnSetProgressText=m_spt;
 				   docCombine.Combine();
 				   htCompare[compareDir+"\\"+new FileInfo(aKey.ToString()).Name]=true;
 				  // htTable[aKey]=true;
 			   }
 			   else// if not found in compared directory, save directly
 			   {
-				   if(!Directory.Exists(m_strSavedPath))
-					   Directory.CreateDirectory(m_strSavedPath);
-				   File.Copy(aKey.ToString(),m_strSavedPath+"\\"+new FileInfo(aKey.ToString()).Name,true);
+				   if(!Directory.Exists(m_savedPath.Path))
+					   Directory.CreateDirectory(m_savedPath.Path);
+				   File.Copy(aKey.ToString(),m_savedPath.Path+"\\"+new FileInfo(aKey.ToString()).Name,true);
 			   }
 
 		   }
@@ -182,6 +201,18 @@ namespace MSNChatCombinator
 	   public void hello(string s)
 	   {
 
+	   }
+
+	   public MSNMessageLibrary.MSNDocumentCombine.SetProgressText OnSetProgressText
+	   {
+		   get
+		   {
+			   return this.m_spt;
+		   }
+		   set
+		   {
+			   this.m_spt=value;
+		   }
 	   }
 	}
 
