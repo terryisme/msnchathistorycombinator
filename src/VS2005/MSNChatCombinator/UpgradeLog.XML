@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="MSNChatCombinator">
+</Property><Property Name="Solution File" Value="E:\Work\MSN\VS2005\MSNChatCombinator\MSNChatCombinator.sln">
+</Property><Property Name="User Options File" Value="E:\Work\MSN\VS2005\MSNChatCombinator\MSNChatCombinator.suo">
+</Property><Property Name="Date" Value="2006年11月30日">
+</Property><Property Name="Time" Value="15:43">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="MSNChatCombinator.sln" Description="File successfully backed up as E:\Work\MSN\VS2005\MSNChatCombinator\Backup\MSNChatCombinator.sln">
+</Event><Event ErrorLevel="0" Project="" Source="MSNChatCombinator.suo" Description="File successfully backed up as E:\Work\MSN\VS2005\MSNChatCombinator\Backup\MSNChatCombinator.suo">
+</Event><Event ErrorLevel="0" Project="MSNChatCombinator" Source="MSNChatCombinator.csproj" Description="Project file successfully backed up as E:\Work\MSN\VS2005\MSNChatCombinator\Backup\MSNChatCombinator.csproj">
+</Event><Event ErrorLevel="0" Project="MSNChatCombinator" Source="MSNChatCombinator.csproj.user" Description="Project user file successfully backed up as E:\Work\MSN\VS2005\MSNChatCombinator\Backup\MSNChatCombinator.csproj.user">
+</Event><Event ErrorLevel="0" Project="MSNChatCombinator" Source="AssemblyInfo.cs" Description="File successfully backed up as E:\Work\MSN\VS2005\MSNChatCombinator\Backup\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="MSNChatCombinator" Source="DateForm.cs" Description="File successfully backed up as E:\Work\MSN\VS2005\MSNChatCombinator\Backup\DateForm.cs">
+</Event><Event ErrorLevel="0" Project="MSNChatCombinator" Source="Form1.cs" Description="File successfully backed up as E:\Work\MSN\VS2005\MSNChatCombinator\Backup\Form1.cs">
+</Event><Event ErrorLevel="0" Project="MSNChatCombinator" Source="frmChooseFileType.cs" Description="File successfully backed up as E:\Work\MSN\VS2005\MSNChatCombinator\Backup\frmChooseFileType.cs">
+</Event><Event ErrorLevel="0" Project="MSNChatCombinator" Source="App.ico" Description="File successfully backed up as E:\Work\MSN\VS2005\MSNChatCombinator\Backup\App.ico">
+</Event><Event ErrorLevel="0" Project="MSNChatCombinator" Source="DateForm.resx" Description="File successfully backed up as E:\Work\MSN\VS2005\MSNChatCombinator\Backup\DateForm.resx">
+</Event><Event ErrorLevel="0" Project="MSNChatCombinator" Source="Form1.resx" Description="File successfully backed up as E:\Work\MSN\VS2005\MSNChatCombinator\Backup\Form1.resx">
+</Event><Event ErrorLevel="0" Project="MSNChatCombinator" Source="frmChooseFileType.resx" Description="File successfully backed up as E:\Work\MSN\VS2005\MSNChatCombinator\Backup\frmChooseFileType.resx">
+</Event><Event ErrorLevel="0" Project="MSNChatCombinator" Source="MSNChatCombinator.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="MSNChatCombinator" Source="MSNChatCombinator.csproj" Description="Converted">
+</Event><Event ErrorLevel="1" Project="MSNMessageLibrary" Source="..\MSNMessageLibrary\MSNMessageLibrary.csproj" Description="Warning: The project file is being backed up to a relative path that differs from the original solution relative path.  The difference in folder hierarchy may create problems in opening or building the backed up solution and project.">
+</Event><Event ErrorLevel="0" Project="MSNMessageLibrary" Source="..\MSNMessageLibrary\MSNMessageLibrary.csproj" Description="Project file successfully backed up as E:\Work\MSN\VS2005\MSNChatCombinator\Backup\MSNMessageLibrary\MSNMessageLibrary.csproj">
+</Event><Event ErrorLevel="0" Project="MSNMessageLibrary" Source="..\MSNMessageLibrary\MSNMessageLibrary.csproj.user" Description="Project user file successfully backed up as E:\Work\MSN\VS2005\MSNChatCombinator\Backup\MSNMessageLibrary\MSNMessageLibrary.csproj.user">
+</Event><Event ErrorLevel="0" Project="MSNMessageLibrary" Source="..\MSNMessageLibrary\AssemblyInfo.cs" Description="File successfully backed up as E:\Work\MSN\VS2005\MSNChatCombinator\Backup\MSNMessageLibrary\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="MSNMessageLibrary" Source="..\MSNMessageLibrary\MSNBaseChatDocument.cs" Description="File successfully backed up as E:\Work\MSN\VS2005\MSNChatCombinator\Backup\MSNMessageLibrary\MSNBaseChatDocument.cs">
+</Event><Event ErrorLevel="0" Project="MSNMessageLibrary" Source="..\MSNMessageLibrary\MSNChatDocumentGaimHTML.cs" Description="File successfully backed up as E:\Work\MSN\VS2005\MSNChatCombinator\Backup\MSNMessageLibrary\MSNChatDocumentGaimHTML.cs">
+</Event><Event ErrorLevel="0" Project="MSNMessageLibrary" Source="..\MSNMessageLibrary\MSNChatDocumentGaimPlainText.cs" Description="File successfully backed up as E:\Work\MSN\VS2005\MSNChatCombinator\Backup\MSNMessageLibrary\MSNChatDocumentGaimPlainText.cs">
+</Event><Event ErrorLevel="0" Project="MSNMessageLibrary" Source="..\MSNMessageLibrary\MSNChatDocumentMicrosoft.cs" Description="File successfully backed up as E:\Work\MSN\VS2005\MSNChatCombinator\Backup\MSNMessageLibrary\MSNChatDocumentMicrosoft.cs">
+</Event><Event ErrorLevel="0" Project="MSNMessageLibrary" Source="..\MSNMessageLibrary\MSNDocumentCombine.cs" Description="File successfully backed up as E:\Work\MSN\VS2005\MSNChatCombinator\Backup\MSNMessageLibrary\MSNDocumentCombine.cs">
+</Event><Event ErrorLevel="0" Project="MSNMessageLibrary" Source="..\MSNMessageLibrary\MSNInvitationMessageInfo.cs" Description="File successfully backed up as E:\Work\MSN\VS2005\MSNChatCombinator\Backup\MSNMessageLibrary\MSNInvitationMessageInfo.cs">
+</Event><Event ErrorLevel="0" Project="MSNMessageLibrary" Source="..\MSNMessageLibrary\MSNInvitationResponseMessageInfo.cs" Description="File successfully backed up as E:\Work\MSN\VS2005\MSNChatCombinator\Backup\MSNMessageLibrary\MSNInvitationResponseMessageInfo.cs">
+</Event><Event ErrorLevel="0" Project="MSNMessageLibrary" Source="..\MSNMessageLibrary\MSNJoinMessageInfo.cs" Description="File successfully backed up as E:\Work\MSN\VS2005\MSNChatCombinator\Backup\MSNMessageLibrary\MSNJoinMessageInfo.cs">
+</Event><Event ErrorLevel="0" Project="MSNMessageLibrary" Source="..\MSNMessageLibrary\MSNLeaveMessageInfo.cs" Description="File successfully backed up as E:\Work\MSN\VS2005\MSNChatCombinator\Backup\MSNMessageLibrary\MSNLeaveMessageInfo.cs">
+</Event><Event ErrorLevel="0" Project="MSNMessageLibrary" Source="..\MSNMessageLibrary\MSNMessage.cs" Description="File successfully backed up as E:\Work\MSN\VS2005\MSNChatCombinator\Backup\MSNMessageLibrary\MSNMessage.cs">
+</Event><Event ErrorLevel="0" Project="MSNMessageLibrary" Source="..\MSNMessageLibrary\MSNMessageInfo.cs" Description="File successfully backed up as E:\Work\MSN\VS2005\MSNChatCombinator\Backup\MSNMessageLibrary\MSNMessageInfo.cs">
+</Event><Event ErrorLevel="0" Project="MSNMessageLibrary" Source="..\MSNMessageLibrary\MSNMessageTextInfo.cs" Description="File successfully backed up as E:\Work\MSN\VS2005\MSNChatCombinator\Backup\MSNMessageLibrary\MSNMessageTextInfo.cs">
+</Event><Event ErrorLevel="0" Project="MSNMessageLibrary" Source="..\MSNMessageLibrary\MSNSession.cs" Description="File successfully backed up as E:\Work\MSN\VS2005\MSNChatCombinator\Backup\MSNMessageLibrary\MSNSession.cs">
+</Event><Event ErrorLevel="0" Project="MSNMessageLibrary" Source="..\MSNMessageLibrary\MSNUserInfo.cs" Description="File successfully backed up as E:\Work\MSN\VS2005\MSNChatCombinator\Backup\MSNMessageLibrary\MSNUserInfo.cs">
+</Event><Event ErrorLevel="0" Project="MSNMessageLibrary" Source="..\MSNMessageLibrary\Utilty.cs" Description="File successfully backed up as E:\Work\MSN\VS2005\MSNChatCombinator\Backup\MSNMessageLibrary\Utilty.cs">
+</Event><Event ErrorLevel="0" Project="MSNMessageLibrary" Source="..\MSNMessageLibrary\MSNMessageLibrary.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="MSNMessageLibrary" Source="..\MSNMessageLibrary\MSNMessageLibrary.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="MSNChatCombinator.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="MSNChatCombinator.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="MSNChatCombinator" Source="MSNChatCombinator.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="MSNMessageLibrary" Source="..\MSNMessageLibrary\MSNMessageLibrary.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>
