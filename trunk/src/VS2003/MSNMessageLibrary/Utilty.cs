@@ -33,4 +33,20 @@ namespace MSNMessageLibrary
 		/// </summary>
 		GaimHTML=2
 	}
+
+	/// <summary>
+	/// Indicates MSN source type.
+	/// </summary>
+	public enum MSNSourceType
+	{
+		/// <summary>
+		/// Directory
+		/// </summary>
+		Directory,
+
+		/// <summary>
+		/// File
+		/// </summary>
+		File
+	}
 }

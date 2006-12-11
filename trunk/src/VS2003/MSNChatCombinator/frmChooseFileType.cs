@@ -66,39 +66,42 @@ namespace MSNChatCombinator
 			// 
 			// label1
 			// 
-			this.label1.Location = new System.Drawing.Point(16, 16);
+			this.label1.Location = new System.Drawing.Point(13, 15);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(176, 23);
+			this.label1.Size = new System.Drawing.Size(147, 21);
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Please choose the file type ";
 			// 
 			// rbMSN
 			// 
-			this.rbMSN.Location = new System.Drawing.Point(64, 40);
+			this.rbMSN.Location = new System.Drawing.Point(53, 37);
 			this.rbMSN.Name = "rbMSN";
+			this.rbMSN.Size = new System.Drawing.Size(87, 22);
 			this.rbMSN.TabIndex = 1;
 			this.rbMSN.Text = "MSN";
 			// 
 			// rbGaimPlain
 			// 
-			this.rbGaimPlain.Location = new System.Drawing.Point(64, 64);
+			this.rbGaimPlain.Location = new System.Drawing.Point(53, 59);
 			this.rbGaimPlain.Name = "rbGaimPlain";
-			this.rbGaimPlain.Size = new System.Drawing.Size(120, 24);
+			this.rbGaimPlain.Size = new System.Drawing.Size(115, 23);
 			this.rbGaimPlain.TabIndex = 2;
 			this.rbGaimPlain.Text = "Gaim-Plain Text";
 			// 
 			// btnNext
 			// 
-			this.btnNext.Location = new System.Drawing.Point(24, 128);
+			this.btnNext.Location = new System.Drawing.Point(20, 119);
 			this.btnNext.Name = "btnNext";
+			this.btnNext.Size = new System.Drawing.Size(62, 21);
 			this.btnNext.TabIndex = 3;
 			this.btnNext.Text = "Next";
 			this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
 			// 
 			// btnCancel
 			// 
-			this.btnCancel.Location = new System.Drawing.Point(152, 128);
+			this.btnCancel.Location = new System.Drawing.Point(127, 119);
 			this.btnCancel.Name = "btnCancel";
+			this.btnCancel.Size = new System.Drawing.Size(62, 21);
 			this.btnCancel.TabIndex = 4;
 			this.btnCancel.Text = "Cancel";
 			this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -106,15 +109,16 @@ namespace MSNChatCombinator
 			// rbHTML
 			// 
 			this.rbHTML.Enabled = false;
-			this.rbHTML.Location = new System.Drawing.Point(64, 88);
+			this.rbHTML.Location = new System.Drawing.Point(53, 82);
 			this.rbHTML.Name = "rbHTML";
+			this.rbHTML.Size = new System.Drawing.Size(87, 22);
 			this.rbHTML.TabIndex = 5;
 			this.rbHTML.Text = "Gaim-HTML";
 			// 
 			// frmChooseFileType
 			// 
-			this.AutoScaleBaseSize = new System.Drawing.Size(6, 14);
-			this.ClientSize = new System.Drawing.Size(292, 174);
+			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+			this.ClientSize = new System.Drawing.Size(243, 161);
 			this.Controls.Add(this.rbHTML);
 			this.Controls.Add(this.btnCancel);
 			this.Controls.Add(this.btnNext);

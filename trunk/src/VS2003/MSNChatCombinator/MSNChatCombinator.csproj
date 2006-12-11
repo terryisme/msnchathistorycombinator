@@ -118,16 +118,6 @@
                     BuildAction = "EmbeddedResource"
                 />
                 <File
-                    RelPath = "Form1.cs"
-                    SubType = "Form"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "Form1.resx"
-                    DependentUpon = "Form1.cs"
-                    BuildAction = "EmbeddedResource"
-                />
-                <File
                     RelPath = "frmChooseFileType.cs"
                     SubType = "Form"
                     BuildAction = "Compile"
@@ -135,6 +125,16 @@
                 <File
                     RelPath = "frmChooseFileType.resx"
                     DependentUpon = "frmChooseFileType.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "MainForm.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "MainForm.resx"
+                    DependentUpon = "MainForm.cs"
                     BuildAction = "EmbeddedResource"
                 />
             </Include>

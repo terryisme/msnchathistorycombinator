@@ -13,7 +13,7 @@ namespace MSNChatCombinator
 	/// <summary>
 	/// Summary description for Form1.
 	/// </summary>
-	public class Form1 : System.Windows.Forms.Form
+	public class MainForm : System.Windows.Forms.Form
 	{
 		private System.Windows.Forms.ListView listFiles;
 		private System.Windows.Forms.ColumnHeader columnHeader1;
@@ -41,7 +41,6 @@ namespace MSNChatCombinator
 		private System.Windows.Forms.MenuItem menuItemDelete;
 		private System.Windows.Forms.StatusBar statusBar1;
 		private System.Windows.Forms.ColumnHeader No;
-		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.ColumnHeader columnHeader2;
 		private System.Windows.Forms.Label label7;
 		/// <summary>
@@ -49,7 +48,7 @@ namespace MSNChatCombinator
 		/// </summary>
 		private System.ComponentModel.Container components = null;
 
-		public Form1()
+		public MainForm()
 		{
 			//
 			// Required for Windows Form Designer support
@@ -85,6 +84,7 @@ namespace MSNChatCombinator
 		{
 			this.listFiles = new System.Windows.Forms.ListView();
 			this.No = new System.Windows.Forms.ColumnHeader();
+			this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
 			this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
 			this.contextMenu1 = new System.Windows.Forms.ContextMenu();
 			this.menuItemAdd = new System.Windows.Forms.MenuItem();
@@ -107,8 +107,6 @@ namespace MSNChatCombinator
 			this.mainMenu1 = new System.Windows.Forms.MainMenu();
 			this.menuItem1 = new System.Windows.Forms.MenuItem();
 			this.statusBar1 = new System.Windows.Forms.StatusBar();
-			this.button1 = new System.Windows.Forms.Button();
-			this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
 			this.label7 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
@@ -121,9 +119,9 @@ namespace MSNChatCombinator
 			this.listFiles.ContextMenu = this.contextMenu1;
 			this.listFiles.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.listFiles.FullRowSelect = true;
-			this.listFiles.Location = new System.Drawing.Point(32, 56);
+			this.listFiles.Location = new System.Drawing.Point(27, 52);
 			this.listFiles.Name = "listFiles";
-			this.listFiles.Size = new System.Drawing.Size(408, 112);
+			this.listFiles.Size = new System.Drawing.Size(340, 104);
 			this.listFiles.TabIndex = 1;
 			this.listFiles.View = System.Windows.Forms.View.Details;
 			this.listFiles.SelectedIndexChanged += new System.EventHandler(this.listFiles_SelectedIndexChanged);
@@ -131,6 +129,10 @@ namespace MSNChatCombinator
 			// No
 			// 
 			this.No.Text = "No";
+			// 
+			// columnHeader2
+			// 
+			this.columnHeader2.Text = "Type";
 			// 
 			// columnHeader1
 			// 
@@ -161,53 +163,53 @@ namespace MSNChatCombinator
 			// label1
 			// 
 			this.label1.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.label1.Location = new System.Drawing.Point(8, 8);
+			this.label1.Location = new System.Drawing.Point(7, 7);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(496, 23);
+			this.label1.Size = new System.Drawing.Size(413, 22);
 			this.label1.TabIndex = 2;
 			this.label1.Text = "Step1: List of MSN files to Combine and the save file path";
 			// 
 			// label2
 			// 
 			this.label2.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.label2.Location = new System.Drawing.Point(8, 240);
+			this.label2.Location = new System.Drawing.Point(7, 223);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(240, 23);
+			this.label2.Size = new System.Drawing.Size(200, 21);
 			this.label2.TabIndex = 3;
 			this.label2.Text = "Step 2:XSL File(MessageLog.xsl£©";
 			// 
 			// txtXSLPath
 			// 
-			this.txtXSLPath.Location = new System.Drawing.Point(104, 272);
+			this.txtXSLPath.Location = new System.Drawing.Point(87, 253);
 			this.txtXSLPath.Name = "txtXSLPath";
-			this.txtXSLPath.Size = new System.Drawing.Size(248, 21);
+			this.txtXSLPath.Size = new System.Drawing.Size(206, 20);
 			this.txtXSLPath.TabIndex = 4;
 			this.txtXSLPath.Text = "";
 			// 
 			// label3
 			// 
 			this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.label3.Location = new System.Drawing.Point(32, 272);
+			this.label3.Location = new System.Drawing.Point(27, 253);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(64, 23);
+			this.label3.Size = new System.Drawing.Size(53, 21);
 			this.label3.TabIndex = 6;
 			this.label3.Text = "XSL File";
 			// 
 			// label4
 			// 
 			this.label4.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.label4.Location = new System.Drawing.Point(8, 296);
+			this.label4.Location = new System.Drawing.Point(7, 275);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(168, 23);
+			this.label4.Size = new System.Drawing.Size(140, 21);
 			this.label4.TabIndex = 7;
 			this.label4.Text = "Step 3: Combine";
 			// 
 			// linkAdd
 			// 
 			this.linkAdd.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.linkAdd.Location = new System.Drawing.Point(344, 176);
+			this.linkAdd.Location = new System.Drawing.Point(287, 163);
 			this.linkAdd.Name = "linkAdd";
-			this.linkAdd.Size = new System.Drawing.Size(200, 23);
+			this.linkAdd.Size = new System.Drawing.Size(166, 22);
 			this.linkAdd.TabIndex = 8;
 			this.linkAdd.TabStop = true;
 			this.linkAdd.Text = "Add MSN Files to Combine";
@@ -216,8 +218,9 @@ namespace MSNChatCombinator
 			// linkChooseSavePath
 			// 
 			this.linkChooseSavePath.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.linkChooseSavePath.Location = new System.Drawing.Point(360, 272);
+			this.linkChooseSavePath.Location = new System.Drawing.Point(300, 253);
 			this.linkChooseSavePath.Name = "linkChooseSavePath";
+			this.linkChooseSavePath.Size = new System.Drawing.Size(83, 21);
 			this.linkChooseSavePath.TabIndex = 9;
 			this.linkChooseSavePath.TabStop = true;
 			this.linkChooseSavePath.Text = "Choose";
@@ -226,9 +229,9 @@ namespace MSNChatCombinator
 			// linkCombine
 			// 
 			this.linkCombine.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.linkCombine.Location = new System.Drawing.Point(144, 312);
+			this.linkCombine.Location = new System.Drawing.Point(120, 290);
 			this.linkCombine.Name = "linkCombine";
-			this.linkCombine.Size = new System.Drawing.Size(152, 23);
+			this.linkCombine.Size = new System.Drawing.Size(144, 21);
 			this.linkCombine.TabIndex = 10;
 			this.linkCombine.TabStop = true;
 			this.linkCombine.Text = "Click Here to Combine";
@@ -237,26 +240,26 @@ namespace MSNChatCombinator
 			// label5
 			// 
 			this.label5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.label5.Location = new System.Drawing.Point(8, 200);
+			this.label5.Location = new System.Drawing.Point(7, 186);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(80, 23);
+			this.label5.Size = new System.Drawing.Size(66, 21);
 			this.label5.TabIndex = 11;
 			this.label5.Text = "Path to Save";
 			// 
 			// txtSavePath
 			// 
-			this.txtSavePath.Location = new System.Drawing.Point(96, 200);
+			this.txtSavePath.Location = new System.Drawing.Point(80, 186);
 			this.txtSavePath.Name = "txtSavePath";
-			this.txtSavePath.Size = new System.Drawing.Size(248, 21);
+			this.txtSavePath.Size = new System.Drawing.Size(207, 20);
 			this.txtSavePath.TabIndex = 12;
 			this.txtSavePath.Text = "";
 			// 
 			// linkLabel1
 			// 
 			this.linkLabel1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.linkLabel1.Location = new System.Drawing.Point(352, 208);
+			this.linkLabel1.Location = new System.Drawing.Point(293, 193);
 			this.linkLabel1.Name = "linkLabel1";
-			this.linkLabel1.Size = new System.Drawing.Size(160, 23);
+			this.linkLabel1.Size = new System.Drawing.Size(134, 21);
 			this.linkLabel1.TabIndex = 13;
 			this.linkLabel1.TabStop = true;
 			this.linkLabel1.Text = "Choose the Path to Save";
@@ -265,9 +268,9 @@ namespace MSNChatCombinator
 			// label6
 			// 
 			this.label6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.label6.Location = new System.Drawing.Point(16, 32);
+			this.label6.Location = new System.Drawing.Point(13, 30);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(160, 23);
+			this.label6.Size = new System.Drawing.Size(134, 21);
 			this.label6.TabIndex = 14;
 			this.label6.Text = "List of MSN Chat Files";
 			// 
@@ -288,39 +291,25 @@ namespace MSNChatCombinator
 			// statusBar1
 			// 
 			this.statusBar1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.statusBar1.Location = new System.Drawing.Point(0, 335);
+			this.statusBar1.Location = new System.Drawing.Point(0, 314);
 			this.statusBar1.Name = "statusBar1";
-			this.statusBar1.Size = new System.Drawing.Size(560, 22);
+			this.statusBar1.Size = new System.Drawing.Size(480, 20);
 			this.statusBar1.TabIndex = 15;
-			// 
-			// button1
-			// 
-			this.button1.Location = new System.Drawing.Point(472, 248);
-			this.button1.Name = "button1";
-			this.button1.TabIndex = 16;
-			this.button1.Text = "button1";
-			this.button1.Visible = false;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
-			// 
-			// columnHeader2
-			// 
-			this.columnHeader2.Text = "Type";
 			// 
 			// label7
 			// 
 			this.label7.ForeColor = System.Drawing.Color.Red;
-			this.label7.Location = new System.Drawing.Point(224, 240);
+			this.label7.Location = new System.Drawing.Point(187, 223);
 			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(152, 23);
+			this.label7.Size = new System.Drawing.Size(126, 21);
 			this.label7.TabIndex = 17;
 			this.label7.Text = "*Required for MSN Only";
 			// 
-			// Form1
+			// MainForm
 			// 
-			this.AutoScaleBaseSize = new System.Drawing.Size(6, 14);
-			this.ClientSize = new System.Drawing.Size(560, 357);
+			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+			this.ClientSize = new System.Drawing.Size(480, 334);
 			this.Controls.Add(this.label7);
-			this.Controls.Add(this.button1);
 			this.Controls.Add(this.statusBar1);
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.linkLabel1);
@@ -336,7 +325,7 @@ namespace MSNChatCombinator
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.listFiles);
 			this.MaximizeBox = false;
-			this.Name = "Form1";
+			this.Name = "MainForm";
 			this.Text = "MSN Chat Histories Combination";
 			this.Load += new System.EventHandler(this.Form1_Load);
 			this.ResumeLayout(false);
@@ -350,7 +339,7 @@ namespace MSNChatCombinator
 		[STAThread]
 		static void Main() 
 		{
-			Application.Run(new Form1());
+			Application.Run(new MainForm());
 		}
 
 
