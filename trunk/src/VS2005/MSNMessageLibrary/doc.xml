@@ -1,270 +1,399 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>MSNMessageLibrary</name>
+        <name>MSN.Core</name>
     </assembly>
     <members>
-        <member name="T:MSNMessageLibrary.MSNLeaveMessageInfo">
+        <member name="T:MSN.Core.Message.MSNMessageInfo">
             <summary>
-            Summary description for MSNLeaveMessageInfo.
+             MSNMessageInfo, represents a MSN message entity.
             </summary>
         </member>
-        <member name="T:MSNMessageLibrary.MSNBaseMessage">
+        <member name="T:MSN.Core.Message.MSNBaseMessage">
             <summary>
             Summary description for MSNMessage.
             </summary>
         </member>
-        <member name="M:MSNMessageLibrary.MSNBaseMessage.#ctor">
+        <member name="M:MSN.Core.Message.MSNBaseMessage.#ctor">
             <summary>
             Construction.
             </summary>
         </member>
-        <member name="F:MSNMessageLibrary.MSNBaseMessage.m_nSessionID">
+        <member name="F:MSN.Core.Message.MSNBaseMessage.m_nSessionID">
             <summary>
             Session ID for each MSN message.
             </summary>
         </member>
-        <member name="F:MSNMessageLibrary.MSNBaseMessage.m_dtDateTime">
+        <member name="F:MSN.Core.Message.MSNBaseMessage.m_dtDateTime">
             <summary>
             Date time
             </summary>
         </member>
-        <member name="F:MSNMessageLibrary.MSNBaseMessage.m_strText">
+        <member name="F:MSN.Core.Message.MSNBaseMessage.m_strText">
             <summary>
             Message text.
             </summary>
         </member>
-        <member name="F:MSNMessageLibrary.MSNBaseMessage.m_strPath">
+        <member name="F:MSN.Core.Message.MSNBaseMessage.m_strPath">
              <summary>
             The file path MSN message located 
              </summary>
         </member>
-        <member name="P:MSNMessageLibrary.MSNBaseMessage.SessionID">
+        <member name="P:MSN.Core.Message.MSNBaseMessage.SessionID">
             <summary>
             Session ID.
             </summary>
         </member>
-        <member name="P:MSNMessageLibrary.MSNBaseMessage.DateTimeOn">
+        <member name="P:MSN.Core.Message.MSNBaseMessage.DateTimeOn">
             <summary>
             Date time Message On.
             </summary>
         </member>
-        <member name="P:MSNMessageLibrary.MSNBaseMessage.Text">
+        <member name="P:MSN.Core.Message.MSNBaseMessage.Text">
             <summary>
             Message text.
             </summary>
         </member>
-        <member name="P:MSNMessageLibrary.MSNBaseMessage.FilePath">
+        <member name="P:MSN.Core.Message.MSNBaseMessage.FilePath">
             <summary>
             File path.
             </summary>
         </member>
-        <member name="M:MSNMessageLibrary.MSNLeaveMessageInfo.#ctor">
+        <member name="F:MSN.Core.Message.MSNMessageInfo.m_strFromUsers">
+            <summary>
+            From Users in MSN message.
+            </summary>
+        </member>
+        <member name="F:MSN.Core.Message.MSNMessageInfo.m_strToUsers">
+            <summary>
+            To users in MSN messages.
+            </summary>
+        </member>
+        <member name="P:MSN.Core.Message.MSNMessageInfo.FromUsers">
+            <summary>
+            From users.
+            </summary>
+        </member>
+        <member name="P:MSN.Core.Message.MSNMessageInfo.ToUsers">
+            <summary>
+            To users
+            </summary>
+        </member>
+        <member name="T:MSN.Core.Message.MSNInvitationResponseMessageInfo">
+            <summary>
+            Summary description for MSNInvitationResponseMessageInfo.
+            </summary>
+        </member>
+        <member name="T:MSN.Core.Message.MSNInvitationMessageInfo">
+             <summary>
+            MSNInvitationMessageInfo class represents a  MSN invitation message
+             </summary>
+        </member>
+        <member name="M:MSN.Core.Message.MSNInvitationMessageInfo.#ctor">
             <summary>
             Construction
             </summary>
         </member>
-        <member name="P:MSNMessageLibrary.MSNLeaveMessageInfo.User">
+        <member name="F:MSN.Core.Message.MSNInvitationMessageInfo.m_strFromUsers">
+            <summary>
+            From Users in MSN message.
+            </summary>
+        </member>
+        <member name="P:MSN.Core.Message.MSNInvitationMessageInfo.Application">
+            <summary>
+            The application in Invitation message. such as 
+            <c><Application>视频对话</Application></c>
+            </summary>
+        </member>
+        <member name="P:MSN.Core.Message.MSNInvitationMessageInfo.File">
+            <summary>
+            File in Invitation Message. Such as <File>P1010035.JPG</File>
+            </summary>
+        </member>
+        <member name="P:MSN.Core.Message.MSNInvitationMessageInfo.FromUsers">
+            <summary>
+            From users.
+            </summary>
+        </member>
+        <member name="M:MSN.Core.Message.MSNInvitationResponseMessageInfo.#ctor">
+            <summary>
+            Construction
+            </summary>
+        </member>
+        <member name="T:MSN.Core.Message.MSNSession">
+            <summary>
+            Summary description for Session.
+            </summary>
+        </member>
+        <member name="M:MSN.Core.Message.MSNSession.#ctor">
+            <summary>
+            Construction.
+            </summary>
+        </member>
+        <member name="M:MSN.Core.Message.MSNSession.#ctor(System.Collections.SortedList)">
+            <summary>
+            Construction.
+            </summary>
+            <param name="src">The MSN messages </param>
+        </member>
+        <member name="M:MSN.Core.Message.MSNSession.Generate">
+            <summary>
+            Generate Session ID
+            </summary>
+        </member>
+        <member name="P:MSN.Core.Message.MSNSession.MessagesSource">
+            <summary>
+            MSN messages source.
+            </summary>
+        </member>
+        <member name="T:MSN.Core.Message.MSNJoinMessageInfo">
+            <summary>
+            Summary description for MSNJoinMessageInfo.
+            </summary>
+        </member>
+        <member name="M:MSN.Core.Message.MSNJoinMessageInfo.#ctor">
+            <summary>
+            Construction
+            </summary>
+        </member>
+        <member name="P:MSN.Core.Message.MSNJoinMessageInfo.User">
             <summary>
             User
             </summary>
         </member>
-        <member name="T:MSNMessageLibrary.MSNDocumentCombine">
+        <member name="T:MSN.Core.MSNDocumentCombine">
             <summary>
             Summary description for MSNDocumentCombine.
             </summary>
         </member>
-        <member name="M:MSNMessageLibrary.MSNDocumentCombine.#ctor">
+        <member name="M:MSN.Core.MSNDocumentCombine.#ctor">
             <summary>
             construction.
             </summary>
         </member>
-        <member name="M:MSNMessageLibrary.MSNDocumentCombine.Combine">
+        <member name="M:MSN.Core.MSNDocumentCombine.Combine">
             <summary>
             Combine the MSN chat message.
             </summary>
         </member>
-        <member name="M:MSNMessageLibrary.MSNDocumentCombine.SaveToMSNFormat(System.Collections.SortedList)">
+        <member name="M:MSN.Core.MSNDocumentCombine.SaveToMSNFormat(System.Collections.SortedList)">
             <summary>
             Save the message.
             </summary>
             <param name="src">The message source.</param>
         </member>
-        <member name="M:MSNMessageLibrary.MSNDocumentCombine.BuildGeneralMessage(System.IO.StreamWriter,MSNMessageLibrary.MSNMessageInfo)">
+        <member name="M:MSN.Core.MSNDocumentCombine.BuildGeneralMessage(System.IO.StreamWriter,MSN.Core.Message.MSNMessageInfo)">
             <summary>
             Build common message.
             </summary>
             <param name="sw">Stream witter to XML file</param>
             <param name="message">The common message.</param>
         </member>
-        <member name="M:MSNMessageLibrary.MSNDocumentCombine.BuildJoinMessage(System.IO.StreamWriter,MSNMessageLibrary.MSNJoinMessageInfo)">
+        <member name="M:MSN.Core.MSNDocumentCombine.BuildJoinMessage(System.IO.StreamWriter,MSN.Core.Message.MSNJoinMessageInfo)">
             <summary>
             Build Join Message.
             </summary>
             <param name="sw">Stream witter to XML file</param>
             <param name="message">The Join message.</param>
         </member>
-        <member name="M:MSNMessageLibrary.MSNDocumentCombine.BuildLeaveMessage(System.IO.StreamWriter,MSNMessageLibrary.MSNLeaveMessageInfo)">
+        <member name="M:MSN.Core.MSNDocumentCombine.BuildLeaveMessage(System.IO.StreamWriter,MSN.Core.Message.MSNLeaveMessageInfo)">
             <summary>
             Build Leave message.
             </summary>
             <param name="sw">Stream witter to XML file</param>
             <param name="message">The Leave message.</param>
         </member>
-        <member name="M:MSNMessageLibrary.MSNDocumentCombine.BuildInvitationMessage(System.IO.StreamWriter,MSNMessageLibrary.MSNInvitationMessageInfo)">
+        <member name="M:MSN.Core.MSNDocumentCombine.BuildInvitationMessage(System.IO.StreamWriter,MSN.Core.Message.MSNInvitationMessageInfo)">
             <summary>
             Build Invitation Message.
             </summary>
             <param name="sw">Stream witter to XML file</param>
             <param name="message">The invitation message.</param>
         </member>
-        <member name="M:MSNMessageLibrary.MSNDocumentCombine.BuildInvitationResponseMessage(System.IO.StreamWriter,MSNMessageLibrary.MSNInvitationResponseMessageInfo)">
+        <member name="M:MSN.Core.MSNDocumentCombine.BuildInvitationResponseMessage(System.IO.StreamWriter,MSN.Core.Message.MSNInvitationResponseMessageInfo)">
             <summary>
             Build InvitationReponse Message.
             </summary>
             <param name="sw">Stream witter to XML file</param>
             <param name="message">The invitation response message.</param>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:MSNMessageLibrary.MSNDocumentCombine.ToXmlString(System.String)" -->
-        <member name="P:MSNMessageLibrary.MSNDocumentCombine.FirstDocument">
+        <!-- Badly formed XML comment ignored for member "M:MSN.Core.MSNDocumentCombine.ToXmlString(System.String)" -->
+        <member name="P:MSN.Core.MSNDocumentCombine.FirstDocument">
             <summary>
             First document
             </summary>
         </member>
-        <member name="P:MSNMessageLibrary.MSNDocumentCombine.SecondDocument">
+        <member name="P:MSN.Core.MSNDocumentCombine.SecondDocument">
             <summary>
             Second document
             </summary>
         </member>
-        <member name="P:MSNMessageLibrary.MSNDocumentCombine.SavedDocument">
+        <member name="P:MSN.Core.MSNDocumentCombine.SavedDocument">
             <summary>
             Saved document
             </summary>
         </member>
-        <member name="P:MSNMessageLibrary.MSNDocumentCombine.XSLFilePathSrc">
+        <member name="P:MSN.Core.MSNDocumentCombine.XSLFilePathSrc">
             <summary>
             Public Property.
             The source XSL file path.
             </summary>
         </member>
-        <member name="P:MSNMessageLibrary.MSNDocumentCombine.OnSetProgressText">
+        <member name="P:MSN.Core.MSNDocumentCombine.OnSetProgressText">
             <summary>
             Delegate
             Set progress text.
             </summary>
         </member>
-        <member name="T:MSNMessageLibrary.MSNDocumentCombine.SetProgressText">
+        <member name="T:MSN.Core.MSNDocumentCombine.SetProgressText">
             <summary>
             Delegate
             Set progress text.The caller must provider the target for it.
             </summary>
         </member>
-        <member name="T:MSNMessageLibrary.MSNFILESTRUCT">
+        <member name="T:MSN.Core.MSNFILESTRUCT">
             <summary>
             MSN source file struct
             </summary>
         </member>
-        <member name="F:MSNMessageLibrary.MSNFILESTRUCT.Path">
+        <member name="F:MSN.Core.MSNFILESTRUCT.Path">
             <summary>
             Path to file.
             </summary>
         </member>
-        <member name="F:MSNMessageLibrary.MSNFILESTRUCT.Format">
+        <member name="F:MSN.Core.MSNFILESTRUCT.Format">
             <summary>
             Format
             </summary>
         </member>
-        <member name="T:MSNMessageLibrary.Style">
+        <member name="F:MSN.Core.MSNFILESTRUCT.SourceType">
             <summary>
-            The constant of every style
+            MSN source type.
             </summary>
         </member>
-        <member name="F:MSNMessageLibrary.Style.DEFAULT_TEXT_STYLE">
+        <member name="T:MSN.Core.Message.MSNChatDocumentMicrosoft">
             <summary>
-            Default text style
+            Summary description for MSNChatDocument.
             </summary>
         </member>
-        <member name="T:MSNMessageLibrary.MSNChatHistoryFormat">
-            <summary>
-            MSN Chat history format 
-            </summary>
-        </member>
-        <member name="F:MSNMessageLibrary.MSNChatHistoryFormat.MSN">
-            <summary>
-            MSN
-            </summary>
-        </member>
-        <member name="F:MSNMessageLibrary.MSNChatHistoryFormat.GaimPlainText">
-            <summary>
-            Gaim Plain Text
-            </summary>
-        </member>
-        <member name="F:MSNMessageLibrary.MSNChatHistoryFormat.GaimHTML">
-            <summary>
-            Gaim  HTML
-            </summary>
-        </member>
-        <member name="T:MSNMessageLibrary.MSNChatDocumentGaimPlainText">
-            <summary>
-             MSNChatDocumentGaimPlainText class is to process Gaim plain text.
-            </summary>
-        </member>
-        <member name="T:MSNMessageLibrary.MSNBaseChatDocument">
+        <member name="T:MSN.Core.Message.MSNBaseChatDocument">
             <summary>
             MSNBaseChatDocument, is a base MSN chat document class.
             </summary>
         </member>
-        <member name="M:MSNMessageLibrary.MSNBaseChatDocument.#ctor">
+        <member name="M:MSN.Core.Message.MSNBaseChatDocument.#ctor">
             <summary>
             MSNBaseChatDocument construction
             </summary>
         </member>
-        <member name="M:MSNMessageLibrary.MSNBaseChatDocument.Load">
+        <member name="M:MSN.Core.Message.MSNBaseChatDocument.Load">
             <summary>
             Load the history document file.
             </summary>
         </member>
-        <member name="M:MSNMessageLibrary.MSNBaseChatDocument.DoInstance(MSNMessageLibrary.MSNFILESTRUCT)">
+        <member name="M:MSN.Core.Message.MSNBaseChatDocument.DoInstance(MSN.Core.MSNFILESTRUCT)">
             <summary>
             Do instance
             </summary>
             <param name="file"></param>
             <returns></returns>
         </member>
-        <member name="P:MSNMessageLibrary.MSNBaseChatDocument.Path">
+        <member name="P:MSN.Core.Message.MSNBaseChatDocument.Path">
             <summary>
             MSN chat history file path.
             </summary>
         </member>
-        <member name="P:MSNMessageLibrary.MSNBaseChatDocument.MSNMessages">
+        <member name="P:MSN.Core.Message.MSNBaseChatDocument.MSNMessages">
             <summary>
             All MSN messages.
             </summary>
         </member>
-        <member name="P:MSNMessageLibrary.MSNBaseChatDocument.Format">
+        <member name="P:MSN.Core.Message.MSNBaseChatDocument.Format">
             <summary>
             MSN chat history format.
             </summary>
         </member>
-        <member name="M:MSNMessageLibrary.MSNChatDocumentGaimPlainText.#ctor(System.String)">
+        <member name="M:MSN.Core.Message.MSNChatDocumentMicrosoft.#ctor">
+            <summary>
+            Construction.
+            </summary>
+        </member>
+        <member name="M:MSN.Core.Message.MSNChatDocumentMicrosoft.#ctor(System.String)">
+             <summary>
+             Construction.
+             </summary>
+            <param name="path">The path of MSN chat history file.</param>
+        </member>
+        <member name="M:MSN.Core.Message.MSNChatDocumentMicrosoft.Load">
+            <summary>
+            Load the MSN chat history file. and read each MSN chat message item into List
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:MSN.Core.Message.MSNChatDocumentMicrosoft.GetUsersFromXmlNode(System.Xml.XmlNode)" -->
+        <!-- Badly formed XML comment ignored for member "M:MSN.Core.Message.MSNChatDocumentMicrosoft.GetFileTextFromXmlNode(System.Xml.XmlNode)" -->
+        <member name="M:MSN.Core.Message.MSNChatDocumentMicrosoft.GetApplicationFromXmlNode(System.Xml.XmlNode)">
+            <summary>
+            Get the application text
+            </summary>
+            <param name="node">The node in  MSN chat(XML format) </param>
+            <returns></returns>
+        </member>
+        <member name="M:MSN.Core.Message.MSNChatDocumentMicrosoft.GetMessageTextFromXmlNode(System.Xml.XmlNode)">
+            <summary>
+            Get the MSN message text.
+            </summary>
+            <param name="node">The node in  MSN chat(XML format) </param>
+            <returns></returns>
+        </member>
+        <member name="P:MSN.Core.Message.MSNChatDocumentMicrosoft.FirstSessionID">
+            <summary>
+            MSN chat first session id.
+            </summary>
+        </member>
+        <member name="P:MSN.Core.Message.MSNChatDocumentMicrosoft.LastSessionID">
+            <summary>
+            MSN chat last session id.
+            </summary>
+        </member>
+        <member name="P:MSN.Core.Message.MSNChatDocumentMicrosoft.Declaration">
+            <summary>
+            MSN file declaration.
+            </summary>
+        </member>
+        <member name="P:MSN.Core.Message.MSNChatDocumentMicrosoft.StyleSheet">
+            <summary>
+            Style sheet
+            </summary>
+        </member>
+        <member name="T:MSN.Core.Message.MSNUserInfo">
+            <summary>
+            Summary description for MSNUserInfo.
+            </summary>
+        </member>
+        <member name="T:MSN.Core.Message.MSNChatDocumentGaimPlainText">
+            <summary>
+             MSNChatDocumentGaimPlainText class is to process Gaim plain text.
+            </summary>
+        </member>
+        <member name="M:MSN.Core.Message.MSNChatDocumentGaimPlainText.#ctor(System.String)">
              <summary>
              Construction
              </summary>
             <param name="gaimLogPath">Gaim log  path</param>
         </member>
-        <member name="M:MSNMessageLibrary.MSNChatDocumentGaimPlainText.Load">
+        <member name="M:MSN.Core.Message.MSNChatDocumentGaimPlainText.Load">
             <summary>
             Load the document from gaim.
             </summary>
         </member>
-        <member name="M:MSNMessageLibrary.MSNChatDocumentGaimPlainText.CheckPathType(System.String)">
+        <member name="M:MSN.Core.Message.MSNChatDocumentGaimPlainText.CheckPathType(System.String)">
             <summary>
             Check the path type is Directory or File.
             </summary>
             <param name="path">Gaim path.</param>
             <returns>Return the path type.</returns>
         </member>
-        <member name="M:MSNMessageLibrary.MSNChatDocumentGaimPlainText.ReadGaimFile(System.String)">
+        <member name="M:MSN.Core.Message.MSNChatDocumentGaimPlainText.ReadGaimFile(System.String)">
             <summary>
             Read the Gaim text fie.
             </summary>
@@ -273,223 +402,189 @@
             Gaim file has many types: Plain Text ,HTML .
             </remarks>
         </member>
-        <member name="T:MSNMessageLibrary.MSNChatDocumentGaimPlainText.GaimLogFileType">
+        <member name="T:MSN.Core.Message.MSNChatDocumentGaimPlainText.GaimLogFileType">
             <summary>
             Gaim log file type. because gaim path can be a folder or file(s)
             </summary>
         </member>
-        <member name="F:MSNMessageLibrary.MSNChatDocumentGaimPlainText.GaimLogFileType.Directory">
+        <member name="F:MSN.Core.Message.MSNChatDocumentGaimPlainText.GaimLogFileType.Directory">
             <summary>
             Directory
             </summary>
         </member>
-        <member name="F:MSNMessageLibrary.MSNChatDocumentGaimPlainText.GaimLogFileType.File">
+        <member name="F:MSN.Core.Message.MSNChatDocumentGaimPlainText.GaimLogFileType.File">
             <summary>
             File
             </summary>
         </member>
-        <member name="T:MSNMessageLibrary.MSNUserInfo">
+        <member name="T:MSN.Core.Message.MSNChatDocumentGaimHTML">
             <summary>
-            Summary description for MSNUserInfo.
+             MSNChatDocumentGaimHTML is a class  to process Gaim file with HTML format.
             </summary>
         </member>
-        <member name="T:MSNMessageLibrary.MSNMessageTextInfo">
+        <member name="M:MSN.Core.Message.MSNChatDocumentGaimHTML.#ctor(System.String)">
             <summary>
-            Summary description for MSNMessageTextInfo.
+            Class construction.
+            </summary>
+            <param name="gaimLogPath">Gaim chat history file path.</param>
+        </member>
+        <member name="M:MSN.Core.Message.MSNChatDocumentGaimHTML.ReadGaimFile(System.String)">
+            <summary>
+            This methods is to read the gaim chat history file.
+            </summary>
+            <param name="path">Chat history file path.</param>
+        </member>
+        <member name="T:MSN.Core.Message.MSNLeaveMessageInfo">
+            <summary>
+            Summary description for MSNLeaveMessageInfo.
             </summary>
         </member>
-        <member name="M:MSNMessageLibrary.MSNMessageTextInfo.#ctor">
-            <summary>
-            Construction
-            </summary>
-        </member>
-        <member name="F:MSNMessageLibrary.MSNMessageTextInfo.m_strText">
-            <summary>
-            Message text.
-            </summary>
-        </member>
-        <member name="F:MSNMessageLibrary.MSNMessageTextInfo.m_strStyle">
-            <summary>
-            Message style.
-            </summary>
-        </member>
-        <member name="P:MSNMessageLibrary.MSNMessageTextInfo.Text">
-            <summary>
-            MSN message text.
-            </summary>
-        </member>
-        <member name="P:MSNMessageLibrary.MSNMessageTextInfo.Style">
-            <summary>
-            Message style.
-            </summary>
-        </member>
-        <member name="T:MSNMessageLibrary.MSNInvitationMessageInfo">
-             <summary>
-            MSNInvitationMessageInfo class represents a  MSN invitation message
-             </summary>
-        </member>
-        <member name="M:MSNMessageLibrary.MSNInvitationMessageInfo.#ctor">
+        <member name="M:MSN.Core.Message.MSNLeaveMessageInfo.#ctor">
             <summary>
             Construction
             </summary>
         </member>
-        <member name="F:MSNMessageLibrary.MSNInvitationMessageInfo.m_strFromUsers">
-            <summary>
-            From Users in MSN message.
-            </summary>
-        </member>
-        <member name="P:MSNMessageLibrary.MSNInvitationMessageInfo.Application">
-            <summary>
-            The application in Invitation message. such as 
-            <c><Application>视频对话</Application></c>
-            </summary>
-        </member>
-        <member name="P:MSNMessageLibrary.MSNInvitationMessageInfo.File">
-            <summary>
-            File in Invitation Message. Such as <File>P1010035.JPG</File>
-            </summary>
-        </member>
-        <member name="P:MSNMessageLibrary.MSNInvitationMessageInfo.FromUsers">
-            <summary>
-            From users.
-            </summary>
-        </member>
-        <member name="T:MSNMessageLibrary.MSNChatDocumentMicrosoft">
-            <summary>
-            Summary description for MSNChatDocument.
-            </summary>
-        </member>
-        <member name="M:MSNMessageLibrary.MSNChatDocumentMicrosoft.#ctor">
-            <summary>
-            Construction.
-            </summary>
-        </member>
-        <member name="M:MSNMessageLibrary.MSNChatDocumentMicrosoft.#ctor(System.String)">
-             <summary>
-             Construction.
-             </summary>
-            <param name="path">The path of MSN chat history file.</param>
-        </member>
-        <member name="M:MSNMessageLibrary.MSNChatDocumentMicrosoft.Load">
-            <summary>
-            Load the MSN chat history file. and read each MSN chat message item into List
-            </summary>
-        </member>
-        <!-- Badly formed XML comment ignored for member "M:MSNMessageLibrary.MSNChatDocumentMicrosoft.GetUsersFromXmlNode(System.Xml.XmlNode)" -->
-        <!-- Badly formed XML comment ignored for member "M:MSNMessageLibrary.MSNChatDocumentMicrosoft.GetFileTextFromXmlNode(System.Xml.XmlNode)" -->
-        <member name="M:MSNMessageLibrary.MSNChatDocumentMicrosoft.GetApplicationFromXmlNode(System.Xml.XmlNode)">
-            <summary>
-            Get the application text
-            </summary>
-            <param name="node">The node in  MSN chat(XML format) </param>
-            <returns></returns>
-        </member>
-        <member name="M:MSNMessageLibrary.MSNChatDocumentMicrosoft.GetMessageTextFromXmlNode(System.Xml.XmlNode)">
-            <summary>
-            Get the MSN message text.
-            </summary>
-            <param name="node">The node in  MSN chat(XML format) </param>
-            <returns></returns>
-        </member>
-        <member name="P:MSNMessageLibrary.MSNChatDocumentMicrosoft.FirstSessionID">
-            <summary>
-            MSN chat first session id.
-            </summary>
-        </member>
-        <member name="P:MSNMessageLibrary.MSNChatDocumentMicrosoft.LastSessionID">
-            <summary>
-            MSN chat last session id.
-            </summary>
-        </member>
-        <member name="P:MSNMessageLibrary.MSNChatDocumentMicrosoft.Declaration">
-            <summary>
-            MSN file declaration.
-            </summary>
-        </member>
-        <member name="P:MSNMessageLibrary.MSNChatDocumentMicrosoft.StyleSheet">
-            <summary>
-            Style sheet
-            </summary>
-        </member>
-        <member name="T:MSNMessageLibrary.MSNChatDocumentGaimHTML">
-            <summary>
-            Summary description for MSNChatDocumentGaimHTML.
-            </summary>
-        </member>
-        <member name="T:MSNMessageLibrary.MSNSession">
-            <summary>
-            Summary description for Session.
-            </summary>
-        </member>
-        <member name="M:MSNMessageLibrary.MSNSession.#ctor">
-            <summary>
-            Construction.
-            </summary>
-        </member>
-        <member name="M:MSNMessageLibrary.MSNSession.#ctor(System.Collections.SortedList)">
-            <summary>
-            Construction.
-            </summary>
-            <param name="src">The MSN messages </param>
-        </member>
-        <member name="M:MSNMessageLibrary.MSNSession.Generate">
-            <summary>
-            Generate Session ID
-            </summary>
-        </member>
-        <member name="P:MSNMessageLibrary.MSNSession.MessagesSource">
-            <summary>
-            MSN messages source.
-            </summary>
-        </member>
-        <member name="T:MSNMessageLibrary.MSNInvitationResponseMessageInfo">
-            <summary>
-            Summary description for MSNInvitationResponseMessageInfo.
-            </summary>
-        </member>
-        <member name="M:MSNMessageLibrary.MSNInvitationResponseMessageInfo.#ctor">
-            <summary>
-            Construction
-            </summary>
-        </member>
-        <member name="T:MSNMessageLibrary.MSNJoinMessageInfo">
-            <summary>
-            Summary description for MSNJoinMessageInfo.
-            </summary>
-        </member>
-        <member name="M:MSNMessageLibrary.MSNJoinMessageInfo.#ctor">
-            <summary>
-            Construction
-            </summary>
-        </member>
-        <member name="P:MSNMessageLibrary.MSNJoinMessageInfo.User">
+        <member name="P:MSN.Core.Message.MSNLeaveMessageInfo.User">
             <summary>
             User
             </summary>
         </member>
-        <member name="T:MSNMessageLibrary.MSNMessageInfo">
+        <member name="T:MSN.Core.Message.Style">
             <summary>
-             MSNMessageInfo, represents a MSN message entity.
+            The constant of every style
             </summary>
         </member>
-        <member name="F:MSNMessageLibrary.MSNMessageInfo.m_strFromUsers">
+        <member name="F:MSN.Core.Message.Style.DEFAULT_TEXT_STYLE">
             <summary>
-            From Users in MSN message.
+            Default text style
             </summary>
         </member>
-        <member name="F:MSNMessageLibrary.MSNMessageInfo.m_strToUsers">
+        <member name="T:MSN.Core.Message.MSNChatHistoryFormat">
             <summary>
-            To users in MSN messages.
+            MSN Chat history format 
             </summary>
         </member>
-        <member name="P:MSNMessageLibrary.MSNMessageInfo.FromUsers">
+        <member name="F:MSN.Core.Message.MSNChatHistoryFormat.MSN">
             <summary>
-            From users.
+            MSN
             </summary>
         </member>
-        <member name="P:MSNMessageLibrary.MSNMessageInfo.ToUsers">
+        <member name="F:MSN.Core.Message.MSNChatHistoryFormat.GaimPlainText">
             <summary>
-            To users
+            Gaim Plain Text
+            </summary>
+        </member>
+        <member name="F:MSN.Core.Message.MSNChatHistoryFormat.GaimHTML">
+            <summary>
+            Gaim  HTML
+            </summary>
+        </member>
+        <member name="T:MSN.Core.Message.MSNSourceType">
+            <summary>
+            Indicates MSN source type.
+            </summary>
+        </member>
+        <member name="F:MSN.Core.Message.MSNSourceType.Directory">
+            <summary>
+            Directory
+            </summary>
+        </member>
+        <member name="F:MSN.Core.Message.MSNSourceType.File">
+            <summary>
+            File
+            </summary>
+        </member>
+        <member name="T:MSN.Core.Message.MSNMessageTextInfo">
+            <summary>
+            Summary description for MSNMessageTextInfo.
+            </summary>
+        </member>
+        <member name="M:MSN.Core.Message.MSNMessageTextInfo.#ctor">
+            <summary>
+            Construction
+            </summary>
+        </member>
+        <member name="F:MSN.Core.Message.MSNMessageTextInfo.m_strText">
+            <summary>
+            Message text.
+            </summary>
+        </member>
+        <member name="F:MSN.Core.Message.MSNMessageTextInfo.m_strStyle">
+            <summary>
+            Message style.
+            </summary>
+        </member>
+        <member name="P:MSN.Core.Message.MSNMessageTextInfo.Text">
+            <summary>
+            MSN message text.
+            </summary>
+        </member>
+        <member name="P:MSN.Core.Message.MSNMessageTextInfo.Style">
+            <summary>
+            Message style.
+            </summary>
+        </member>
+        <member name="T:MSN.Core.CombineMSNDirectory">
+            <summary>
+            CombineMSNDirectory, is to combine 2 both MSN directory.
+            </summary>
+            <remarks>
+            It will  fit to 2 cases:
+            1. Directory and directory
+            2. Directory and file
+            </remarks>
+        </member>
+        <member name="M:MSN.Core.CombineMSNDirectory.#ctor(MSN.Core.MSNFILESTRUCT,MSN.Core.MSNFILESTRUCT,MSN.Core.MSNFILESTRUCT,System.String)">
+            <summary>
+            Construction.
+            </summary>
+            <param name="path1">The path of file/directory 1.</param>
+            <param name="path2">The path of file/directory 2</param>
+            <param name="savedPath">The saved path.</param>
+            <param name="XslPath">The XSL file path.</param>
+        </member>
+        <member name="M:MSN.Core.CombineMSNDirectory.#ctor(MSN.Core.MSNFILESTRUCT,MSN.Core.MSNFILESTRUCT,MSN.Core.MSNFILESTRUCT)">
+            <summary>
+            Construction.
+            </summary>
+            <param name="path1">The path of file/directory 1.</param>
+            <param name="path2">The path of file/directory 2</param>
+            <param name="savedPath">The saved path.</param>
+        </member>
+        <member name="M:MSN.Core.CombineMSNDirectory.Process">
+            <summary>
+            To process and combine MSN chat  histories.
+            </summary>
+            <returns>
+            Return true if success, otherwise false.
+            </returns>
+        </member>
+        <member name="M:MSN.Core.CombineMSNDirectory.Check">
+            <summary>
+            To validate files/directories
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MSN.Core.CombineMSNDirectory.IsExisting(System.String)">
+            <summary>
+            Check the specified path is existing.
+            </summary>
+            <param name="path">The path to check</param>
+            <returns>
+            Return true if the path is valid, otherwise false 
+            </returns>
+        </member>
+        <member name="M:MSN.Core.CombineMSNDirectory.GetSubFiles(System.String)">
+            <summary>
+            Load all files in the directory
+            </summary>
+            <param name="dirPath"></param>
+            <returns></returns>
+        </member>
+        <member name="P:MSN.Core.CombineMSNDirectory.OnSetProgressText">
+            <summary>
+            A delegate . 
+            To set the progress text to display for users.
             </summary>
         </member>
     </members>

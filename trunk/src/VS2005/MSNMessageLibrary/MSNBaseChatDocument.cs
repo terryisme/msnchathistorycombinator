@@ -1,6 +1,6 @@
 using System;
 using System.Collections;
-namespace MSNMessageLibrary
+namespace MSN.Core.Message
 {
 	/// <summary>
 	/// MSNBaseChatDocument, is a base MSN chat document class.

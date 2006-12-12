@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 
-namespace MSNMessageLibrary
+namespace MSN.Core.Message
 {
 	/// <summary>
 	///MSNInvitationMessageInfo class represents a  MSN invitation message
