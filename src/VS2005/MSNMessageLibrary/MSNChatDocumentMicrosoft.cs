@@ -4,7 +4,7 @@ using System.Data;
 using System.Xml;
 using System.Xml.Xsl;
 using System.Globalization;
-namespace MSNMessageLibrary
+namespace MSN.Core.Message
 {
 	/// <summary>
 	/// Summary description for MSNChatDocument.

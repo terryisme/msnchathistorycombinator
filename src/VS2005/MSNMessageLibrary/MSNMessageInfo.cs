@@ -1,6 +1,6 @@
 using System;
 using System.Collections;
-namespace MSNMessageLibrary
+namespace MSN.Core.Message
 {
 	/// <summary>
 	///  MSNMessageInfo, represents a MSN message entity.

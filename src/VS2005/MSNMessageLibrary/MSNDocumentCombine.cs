@@ -1,8 +1,8 @@
 using System;
 using System.Collections;
 using System.IO;
-
-namespace MSNMessageLibrary
+using MSN.Core.Message;
+namespace MSN.Core
 {
 	/// <summary>
 	/// Summary description for MSNDocumentCombine.
@@ -189,10 +189,15 @@ namespace MSNMessageLibrary
 			{
 				FileInfo src=new FileInfo(this.XSLFilePathSrc);		
 				FileInfo dest=new FileInfo(this.SavedDocument.Path);		
-				strDest=dest.DirectoryName+src.Name;
+				strDest=dest.DirectoryName+@"\"+src.Name;
 				if(!XSLFilePathSrc.Equals(strDest))				   
 				{
-					File.Copy(this.XSLFilePathSrc,strDest,true);
+					if(!Directory.Exists(dest.DirectoryName))
+						Directory.CreateDirectory(dest.DirectoryName);
+
+					//if copy the same one, skip it.
+                  if(string.Compare(new FileInfo(this.XSLFilePathSrc).FullName,new FileInfo(strDest).FullName,true)!=0)
+					  File.Copy(this.XSLFilePathSrc,strDest,true);
 				}
 			}
 
@@ -601,6 +606,13 @@ namespace MSNMessageLibrary
 		/// Format
 		/// </summary>
 		public MSNChatHistoryFormat Format=MSNChatHistoryFormat.MSN;
+
+
+		/// <summary>
+		/// MSN source type.
+		/// </summary>
+		public MSNSourceType SourceType=MSNSourceType.File;
+
 
 	};
 }
