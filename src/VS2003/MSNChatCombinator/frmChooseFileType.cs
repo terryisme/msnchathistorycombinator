@@ -3,7 +3,8 @@ using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
-using MSNMessageLibrary;
+using MSN.Core;
+using MSN.Core.Message;
 namespace MSNChatCombinator
 {
 	/// <summary>
@@ -34,6 +35,12 @@ namespace MSNChatCombinator
 			if(srcType==MSNSourceType.File)
 				this.rbFile.Checked=true;
 
+		}
+
+		public frmChooseFileType(MSNSourceType srcType, bool isForSave):this(srcType)
+		{		
+				this.rbFile.Enabled=!isForSave;
+				this.rbDir.Enabled=!isForSave;
 		}
 
 		public frmChooseFileType()
@@ -95,10 +102,12 @@ namespace MSNChatCombinator
 			// 
 			// rbMSN
 			// 
+			this.rbMSN.Checked = true;
 			this.rbMSN.Location = new System.Drawing.Point(16, 0);
 			this.rbMSN.Name = "rbMSN";
 			this.rbMSN.Size = new System.Drawing.Size(87, 22);
 			this.rbMSN.TabIndex = 1;
+			this.rbMSN.TabStop = true;
 			this.rbMSN.Text = "MSN";
 			// 
 			// rbGaimPlain
@@ -146,9 +155,11 @@ namespace MSNChatCombinator
 			// 
 			// rbDir
 			// 
+			this.rbDir.Checked = true;
 			this.rbDir.Location = new System.Drawing.Point(16, 8);
 			this.rbDir.Name = "rbDir";
 			this.rbDir.TabIndex = 7;
+			this.rbDir.TabStop = true;
 			this.rbDir.Text = "Directory";
 			// 
 			// rbFile
@@ -188,7 +199,7 @@ namespace MSNChatCombinator
 			this.Controls.Add(this.btnNext);
 			this.Controls.Add(this.label1);
 			this.Name = "frmChooseFileType";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Choose File Type";
 			this.panel1.ResumeLayout(false);
 			this.panel2.ResumeLayout(false);

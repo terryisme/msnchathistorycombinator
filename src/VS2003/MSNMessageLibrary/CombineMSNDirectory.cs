@@ -25,14 +25,20 @@ namespace MSN.Core
 	   /// Construction.
 	   /// </summary>
 	   /// <param name="path1">The path of file/directory 1.</param>
-	   /// <param name="type1">The type, file or directory for path1..</param>
 	   /// <param name="path2">The path of file/directory 2</param>
-	   /// <param name="type2">The type of path2.</param>
+	   /// <param name="savedPath">The saved path.</param>
+	   /// <param name="XslPath">The XSL file path.</param>
 		public CombineMSNDirectory(MSNFILESTRUCT path1,MSNFILESTRUCT path2,MSNFILESTRUCT savedPath,string XslPath):this(path1,path2,savedPath)
 		{
 			m_strXslPath=XslPath;			
 		}
 
+	   /// <summary>
+	   /// Construction.
+	   /// </summary>
+	   /// <param name="path1">The path of file/directory 1.</param>
+	   /// <param name="path2">The path of file/directory 2</param>
+	   /// <param name="savedPath">The saved path.</param>
 	   public CombineMSNDirectory(MSNFILESTRUCT path1,MSNFILESTRUCT path2,MSNFILESTRUCT savedPath)
 	   {
 		   m_path1=path1;
@@ -51,6 +57,13 @@ namespace MSN.Core
 		   	chatDoc.Combine();
 		   
 	   }
+
+	   /// <summary>
+	   /// To process and combine MSN chat  histories.
+	   /// </summary>
+	   /// <returns>
+	   /// Return true if success, otherwise false.
+	   /// </returns>
 	   public bool Process()
 	   {
 		   if(!Check()) return false;
@@ -227,6 +240,10 @@ namespace MSN.Core
 
 	   }
 	
+	   /// <summary>
+	   /// A delegate . 
+	   /// To set the progress text to display for users.
+	   /// </summary>
 	   public MSN.Core.MSNDocumentCombine.SetProgressText OnSetProgressText
 	   {
 		   get

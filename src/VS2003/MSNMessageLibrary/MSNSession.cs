@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 
-namespace MSNMessageLibrary
+namespace MSN.Core.Message
 {
 	/// <summary>
 	/// Summary description for Session.

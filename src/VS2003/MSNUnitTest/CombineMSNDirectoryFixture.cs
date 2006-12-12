@@ -2,9 +2,9 @@ using System;
 using NUnit;
 using NUnit.Core;
 using NUnit.Framework;
-using MSNChatCombinator;
-using MSNMessageLibrary;
-namespace MSNUnitTest
+using MSN.Core;
+using MSN.Core.Message;
+namespace MSN.UnitTest
 {
 	/// <summary>
 	/// CombineMSNDirectoryFixture is to test <c>CombineMSNDirectoryFixture</c>.
@@ -44,9 +44,9 @@ namespace MSNUnitTest
 			savePath.SourceType=MSNSourceType.Directory;
 
 												  
-			MSNChatCombinator.CombineMSNDirectory combine=
+			MSN.Core.CombineMSNDirectory combine=
 				new CombineMSNDirectory(path1,path2,savePath, @"E:\Work\MSN\Test\msn1\MessageLog.xsl");
-combine.OnSetProgressText=new MSNMessageLibrary.MSNDocumentCombine.SetProgressText(hello);
+        combine.OnSetProgressText=new MSN.Core.MSNDocumentCombine.SetProgressText(hello);
 			combine.Process();
 		}
 
@@ -69,10 +69,10 @@ combine.OnSetProgressText=new MSNMessageLibrary.MSNDocumentCombine.SetProgressTe
 			savePath.SourceType=MSNSourceType.Directory;
 
 												  
-			MSNChatCombinator.CombineMSNDirectory combine=
+			MSN.Core.CombineMSNDirectory combine=
 				new CombineMSNDirectory(path1,path2,savePath, @"E:\Work\MSN\Test\msn1\MessageLog.xsl");
 
-            combine.OnSetProgressText=new MSNMessageLibrary.MSNDocumentCombine.SetProgressText(hello);
+            combine.OnSetProgressText=new MSN.Core.MSNDocumentCombine.SetProgressText(hello);
 			combine.Process();
 		}
 
@@ -95,10 +95,10 @@ combine.OnSetProgressText=new MSNMessageLibrary.MSNDocumentCombine.SetProgressTe
 			savePath.SourceType=MSNSourceType.File;
 
 												  
-			MSNChatCombinator.CombineMSNDirectory combine=
+			MSN.Core.CombineMSNDirectory combine=
 				new CombineMSNDirectory(path1,path2,savePath, @"E:\Work\MSN\Test\msn1\MessageLog.xsl");
 
-			combine.OnSetProgressText=new MSNMessageLibrary.MSNDocumentCombine.SetProgressText(hello);
+			combine.OnSetProgressText=new MSN.Core.MSNDocumentCombine.SetProgressText(hello);
 			combine.Process();
 		}
 		public void hello(string s)

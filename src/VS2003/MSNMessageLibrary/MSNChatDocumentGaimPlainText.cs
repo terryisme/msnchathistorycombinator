@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.IO;
 
-namespace MSNMessageLibrary
+namespace MSN.Core.Message
 {
 	/// <summary>
 	///  MSNChatDocumentGaimPlainText class is to process Gaim plain text.

@@ -1,6 +1,6 @@
 using System;
 
-namespace MSNMessageLibrary
+namespace MSN.Core.Message
 {
 	/// <summary>
 	///  MSNChatDocumentGaimHTML is a class  to process Gaim file with HTML format.

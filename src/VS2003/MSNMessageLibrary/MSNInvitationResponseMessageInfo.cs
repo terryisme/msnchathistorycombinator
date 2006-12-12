@@ -1,6 +1,6 @@
 using System;
 
-namespace MSNMessageLibrary
+namespace MSN.Core.Message
 {
 	/// <summary>
 	/// Summary description for MSNInvitationResponseMessageInfo.

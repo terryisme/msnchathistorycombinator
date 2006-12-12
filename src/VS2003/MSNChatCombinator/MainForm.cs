@@ -7,7 +7,8 @@ using System.Data;
 using System.Xml;
 using System.Xml.Xsl;
 using System.Xml.XPath;
-using MSNMessageLibrary;
+using MSN.Core;
+using MSN.Core.Message;
 namespace MSNChatCombinator
 {
 	/// <summary>
@@ -18,6 +19,7 @@ namespace MSNChatCombinator
 		#region User Defined Variants
 		private int MAXCOUNT=0;
 		private MSNChatHistoryFormat m_savedFileFormat;
+		private MSNSourceType m_savedSourceType;
 		#endregion
 		
 		#region Controls
@@ -82,6 +84,7 @@ namespace MSNChatCombinator
 			this.No = new System.Windows.Forms.ColumnHeader();
 			this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
 			this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
+			this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
 			this.contextMenu1 = new System.Windows.Forms.ContextMenu();
 			this.menuItemAdd = new System.Windows.Forms.MenuItem();
 			this.menuItemEdit = new System.Windows.Forms.MenuItem();
@@ -105,7 +108,6 @@ namespace MSNChatCombinator
 			this.statusBar1 = new System.Windows.Forms.StatusBar();
 			this.label7 = new System.Windows.Forms.Label();
 			this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-			this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
 			this.SuspendLayout();
 			// 
 			// listFiles
@@ -137,6 +139,10 @@ namespace MSNChatCombinator
 			// 
 			this.columnHeader1.Text = "Path Of MSN File";
 			this.columnHeader1.Width = 340;
+			// 
+			// columnHeader3
+			// 
+			this.columnHeader3.Text = "Source Type";
 			// 
 			// contextMenu1
 			// 
@@ -173,7 +179,7 @@ namespace MSNChatCombinator
 			this.label2.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.label2.Location = new System.Drawing.Point(7, 223);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(200, 21);
+			this.label2.Size = new System.Drawing.Size(209, 21);
 			this.label2.TabIndex = 3;
 			this.label2.Text = "Step 2:XSL File(MessageLog.xsl£©";
 			// 
@@ -298,15 +304,11 @@ namespace MSNChatCombinator
 			// label7
 			// 
 			this.label7.ForeColor = System.Drawing.Color.Red;
-			this.label7.Location = new System.Drawing.Point(187, 223);
+			this.label7.Location = new System.Drawing.Point(216, 224);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(126, 21);
 			this.label7.TabIndex = 17;
 			this.label7.Text = "*Required for MSN Only";
-			// 
-			// columnHeader3
-			// 
-			this.columnHeader3.Text = "Source Type";
 			// 
 			// MainForm
 			// 
@@ -329,6 +331,7 @@ namespace MSNChatCombinator
 			this.Controls.Add(this.listFiles);
 			this.MaximizeBox = false;
 			this.Name = "MainForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "MSN Chat Histories Combination";
 			this.Load += new System.EventHandler(this.Form1_Load);
 			this.ResumeLayout(false);
@@ -415,63 +418,92 @@ namespace MSNChatCombinator
             
 			ShowStatus("Start combining...");
 
-		
-			   MSNDocumentCombine chatDoc=new MSNDocumentCombine();
-				chatDoc.OnSetProgressText=new MSNMessageLibrary.MSNDocumentCombine.SetProgressText(ShowStatus);
-			
-				chatDoc.XSLFilePathSrc=this.txtXSLPath.Text;
-
-				chatDoc.FirstDocument.Path=listFiles.Items[0].SubItems[2].Text;
-				chatDoc.FirstDocument.Format=this.GetFileFormat(listFiles.Items[0].SubItems[1].Text);
-				chatDoc.SecondDocument.Path=listFiles.Items[1].SubItems[2].Text;
-				chatDoc.SecondDocument.Format=this.GetFileFormat(listFiles.Items[1].SubItems[1].Text);
-				chatDoc.SavedDocument.Path=this.txtSavePath.Text;
-				chatDoc.SavedDocument.Format=this.m_savedFileFormat;
-
-				//chatDoc.SavedFileFormat=m_savedFileFormat;
-
-				ShowStatus("Start combining the first and second file");
-				chatDoc.Combine();
-				ShowStatus("Finish combining the first and second file");
-				for(int index=2;index<listFiles.Items.Count;index++)
-				{
-					ShowStatus("Start combining "+index+" and "+(index+1)+" files");
-					//chatDoc.FirstDocumentPath=this.txtSavePath.Text;
-					//chatDoc.SecondDocumentPath=listFiles.Items[index].SubItems[2].Text;
-					//chatDoc.SavedDocumentPath=this.txtSavePath.Text;
-
-					chatDoc.FirstDocument.Path=this.txtSavePath.Text;
-					chatDoc.FirstDocument.Format=this.m_savedFileFormat;
-
-					chatDoc.SecondDocument.Path=listFiles.Items[index].SubItems[2].Text;
-					chatDoc.SecondDocument.Format=this.GetFileFormat(listFiles.Items[index].SubItems[1].Text);
-
-					chatDoc.SavedDocument.Path=this.txtSavePath.Text;
-					chatDoc.SavedDocument.Format=this.m_savedFileFormat;
-
-					chatDoc.Combine();
-					ShowStatus("Finish  combining "+index+" and "+(index+1)+" files");
-				}
-			
-//			MSNFILESTRUCT path1=new MSNFILESTRUCT();
-//			MSNFILESTRUCT path2=new MSNFILESTRUCT();
-//			MSNFILESTRUCT savePath=new MSNFILESTRUCT();			
-//									  
-//			MSNChatCombinator.CombineMSNDirectory combine;
+			#region Remarked
+//			   MSNDocumentCombine chatDoc=new MSNDocumentCombine();
+//				chatDoc.OnSetProgressText=new MSNMessageLibrary.MSNDocumentCombine.SetProgressText(ShowStatus);
 //			
-//			for(int index=0;index<listFiles.Items.Count;index++)
-//			{
-//				path1.Path=this.listFiles.Items.Text;
-//				path1.Format=this.m_savedFileFormat;
+//				chatDoc.XSLFilePathSrc=this.txtXSLPath.Text;
 //
-//				chatDoc.SecondDocument.Path=listFiles.Items[index].SubItems[2].Text;
-//				chatDoc.SecondDocument.Format=this.GetFileFormat(listFiles.Items[index].SubItems[1].Text);
-//
+//				chatDoc.FirstDocument.Path=listFiles.Items[0].SubItems[2].Text;
+//				chatDoc.FirstDocument.Format=this.GetFileFormat(listFiles.Items[0].SubItems[1].Text);
+//				chatDoc.SecondDocument.Path=listFiles.Items[1].SubItems[2].Text;
+//				chatDoc.SecondDocument.Format=this.GetFileFormat(listFiles.Items[1].SubItems[1].Text);
 //				chatDoc.SavedDocument.Path=this.txtSavePath.Text;
 //				chatDoc.SavedDocument.Format=this.m_savedFileFormat;
-//			}
-//			combine.OnSetProgressText=new MSNMessageLibrary.MSNDocumentCombine.SetProgressText(hello);
-//		//	combine.Process();
+//
+//				//chatDoc.SavedFileFormat=m_savedFileFormat;
+//
+//				ShowStatus("Start combining the first and second file");
+//				chatDoc.Combine();
+//				ShowStatus("Finish combining the first and second file");
+//				for(int index=2;index<listFiles.Items.Count;index++)
+//				{
+//					ShowStatus("Start combining "+index+" and "+(index+1)+" files");
+//					//chatDoc.FirstDocumentPath=this.txtSavePath.Text;
+//					//chatDoc.SecondDocumentPath=listFiles.Items[index].SubItems[2].Text;
+//					//chatDoc.SavedDocumentPath=this.txtSavePath.Text;
+//
+//					chatDoc.FirstDocument.Path=this.txtSavePath.Text;
+//					chatDoc.FirstDocument.Format=this.m_savedFileFormat;
+//
+//					chatDoc.SecondDocument.Path=listFiles.Items[index].SubItems[2].Text;
+//					chatDoc.SecondDocument.Format=this.GetFileFormat(listFiles.Items[index].SubItems[1].Text);
+//
+//					chatDoc.SavedDocument.Path=this.txtSavePath.Text;
+//					chatDoc.SavedDocument.Format=this.m_savedFileFormat;
+//
+//					chatDoc.Combine();
+//					ShowStatus("Finish  combining "+index+" and "+(index+1)+" files");
+//				}
+			#endregion
+
+			MSNFILESTRUCT path1=new MSNFILESTRUCT();
+			MSNFILESTRUCT path2=new MSNFILESTRUCT();
+			MSNFILESTRUCT savePath=new MSNFILESTRUCT();			
+									  
+			MSN.Core.CombineMSNDirectory combine;
+			
+			path1.Path=listFiles.Items[0].SubItems[2].Text;
+			path1.Format=this.GetFileFormat(listFiles.Items[0].SubItems[1].Text);
+			path1.SourceType=this.GetSourceType(listFiles.Items[0].SubItems[3].Text);
+
+			path2.Path=listFiles.Items[1].SubItems[2].Text;
+			path2.Format=this.GetFileFormat(listFiles.Items[1].SubItems[1].Text);
+			path2.SourceType=this.GetSourceType(listFiles.Items[1].SubItems[3].Text);
+
+			savePath.Path=this.txtSavePath.Text;
+			savePath.Format=this.m_savedFileFormat;
+			savePath.SourceType=this.m_savedSourceType;
+
+			ShowStatus("Start combining the first and second file");
+			combine=new CombineMSNDirectory(path1,path2,savePath,this.txtXSLPath.Text);
+			combine.OnSetProgressText=new MSN.Core.MSNDocumentCombine.SetProgressText(ShowStatus);
+			combine.Process();
+			ShowStatus("Finish combining the first and second file");
+			
+			for(int index=2;index<listFiles.Items.Count;index++)
+			{
+				ShowStatus("Start combining "+index+" and "+(index+1)+" files");
+//				path1.Path=listFiles.Items[index].SubItems[2].Text;
+//				path1.Format=this.GetFileFormat(listFiles.Items[index].SubItems[1].Text);
+//				path1.SourceType=this.GetSourceType(listFiles.Items[index].SubItems[3].Text);
+
+				path1=savePath;
+
+				path2.Path=listFiles.Items[index].SubItems[2].Text;
+				path2.Format=this.GetFileFormat(listFiles.Items[index].SubItems[1].Text);
+				path2.SourceType=this.GetSourceType(listFiles.Items[index].SubItems[3].Text);
+
+				savePath.Path=this.txtSavePath.Text;
+				savePath.Format=this.m_savedFileFormat;
+				savePath.SourceType=this.m_savedSourceType;
+
+				combine=new CombineMSNDirectory(path1,path2,savePath,this.txtXSLPath.Text);
+				combine.OnSetProgressText=new MSN.Core.MSNDocumentCombine.SetProgressText(ShowStatus);
+				combine.Process();
+				ShowStatus("Finish  combining "+index+" and "+(index+1)+" files");
+			}
+
 			this.ShowControls(true);
 			ShowStatus("Finished!");
 			MessageBox.Show("Finished!","Finished");
@@ -503,10 +535,10 @@ namespace MSNChatCombinator
 			bool isSavedAsDir=this.IsDirectorySourceExisting();
 			if(isSavedAsDir)
 			{
-				frmChoose=new frmChooseFileType(MSNSourceType.Directory);
+				frmChoose=new frmChooseFileType(MSNSourceType.Directory,true);
 			}
 			else
-             	frmChoose=new frmChooseFileType(MSNSourceType.File);
+             	frmChoose=new frmChooseFileType(MSNSourceType.File,true);
 
 			if(frmChoose.ShowDialog()!=DialogResult.Yes)
 				return;
@@ -515,11 +547,15 @@ namespace MSNChatCombinator
 			if(isSavedAsDir)
 			{
 				if(this.folderBrowserDialog1.ShowDialog()==DialogResult.OK)
+				{
 					this.txtSavePath.Text=this.folderBrowserDialog1.SelectedPath;
+					this.m_savedSourceType=MSNSourceType.Directory;
+				}
 				return;
 			}
 
 			//saved as File format
+			this.m_savedSourceType=MSNSourceType.File;
 			this.saveFileDialog1.InitialDirectory="C:\\";
 			
 			this.saveFileDialog1.Filter=GetOpenFileDialogFilter(m_savedFileFormat);
@@ -695,12 +731,13 @@ namespace MSNChatCombinator
 			
 				try
 				{
-					if(MSNChatHistoryFormat.MSN==this.GetFileFormat(this.listFiles.Items[index].SubItems[1].Text))
+					if(MSNChatHistoryFormat.MSN==this.GetFileFormat(this.listFiles.Items[index].SubItems[1].Text)
+						&&this.GetSourceType(this.listFiles.Items[index].SubItems[3].Text)==MSNSourceType.File)
 						xml.Load(this.listFiles.Items[index].SubItems[2].Text);
 				}
 				catch
 				{
-					MessageBox.Show("Please check"+this.listFiles.Items[index].SubItems[2].Text+" file, it is invalid!",
+					MessageBox.Show("Please check "+this.listFiles.Items[index].SubItems[2].Text+" file, it is invalid!",
 						"Invalid file.",
 						MessageBoxButtons.OK,
 						MessageBoxIcon.Information);
