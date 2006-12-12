@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSNChatCombinator", "MSNCha
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSNMessageLibrary", "..\MSNMessageLibrary\MSNMessageLibrary.csproj", "{E5E25FF1-25E4-43F8-A85C-5C96EBA9EA4A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSNUnitTest", "..\MSNUnitTest\MSNUnitTest.csproj", "{CC1B82F2-20D8-4F48-83B9-C6918D55CBC4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,6 +20,10 @@ Global
 		{E5E25FF1-25E4-43F8-A85C-5C96EBA9EA4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5E25FF1-25E4-43F8-A85C-5C96EBA9EA4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5E25FF1-25E4-43F8-A85C-5C96EBA9EA4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC1B82F2-20D8-4F48-83B9-C6918D55CBC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC1B82F2-20D8-4F48-83B9-C6918D55CBC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC1B82F2-20D8-4F48-83B9-C6918D55CBC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC1B82F2-20D8-4F48-83B9-C6918D55CBC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
