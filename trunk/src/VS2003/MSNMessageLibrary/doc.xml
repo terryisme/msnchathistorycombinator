@@ -4,6 +4,69 @@
         <name>MSN.Core</name>
     </assembly>
     <members>
+        <member name="T:MSN.Core.CombineMSNDirectory">
+            <summary>
+            CombineMSNDirectory, is to combine 2 both MSN directory.
+            </summary>
+            <remarks>
+            It will  fit to 2 cases:
+            1. Directory and directory
+            2. Directory and file
+            </remarks>
+        </member>
+        <member name="M:MSN.Core.CombineMSNDirectory.#ctor(MSN.Core.MSNFILESTRUCT,MSN.Core.MSNFILESTRUCT,MSN.Core.MSNFILESTRUCT,System.String)">
+            <summary>
+            Construction.
+            </summary>
+            <param name="path1">The path of file/directory 1.</param>
+            <param name="path2">The path of file/directory 2</param>
+            <param name="savedPath">The saved path.</param>
+            <param name="XslPath">The XSL file path.</param>
+        </member>
+        <member name="M:MSN.Core.CombineMSNDirectory.#ctor(MSN.Core.MSNFILESTRUCT,MSN.Core.MSNFILESTRUCT,MSN.Core.MSNFILESTRUCT)">
+            <summary>
+            Construction.
+            </summary>
+            <param name="path1">The path of file/directory 1.</param>
+            <param name="path2">The path of file/directory 2</param>
+            <param name="savedPath">The saved path.</param>
+        </member>
+        <member name="M:MSN.Core.CombineMSNDirectory.Process">
+            <summary>
+            To process and combine MSN chat  histories.
+            </summary>
+            <returns>
+            Return true if success, otherwise false.
+            </returns>
+        </member>
+        <member name="M:MSN.Core.CombineMSNDirectory.Check">
+            <summary>
+            To validate files/directories
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MSN.Core.CombineMSNDirectory.IsExisting(System.String)">
+            <summary>
+            Check the specified path is existing.
+            </summary>
+            <param name="path">The path to check</param>
+            <returns>
+            Return true if the path is valid, otherwise false 
+            </returns>
+        </member>
+        <member name="M:MSN.Core.CombineMSNDirectory.GetSubFiles(System.String)">
+            <summary>
+            Load all files in the directory
+            </summary>
+            <param name="dirPath"></param>
+            <returns></returns>
+        </member>
+        <member name="P:MSN.Core.CombineMSNDirectory.OnSetProgressText">
+            <summary>
+            A delegate . 
+            To set the progress text to display for users.
+            </summary>
+        </member>
         <member name="T:MSN.Core.Message.MSNBaseChatDocument">
             <summary>
             MSNBaseChatDocument, is a base MSN chat document class.
@@ -522,69 +585,6 @@
         <member name="F:MSN.Core.Message.MSNSourceType.File">
             <summary>
             File
-            </summary>
-        </member>
-        <member name="T:MSN.Core.CombineMSNDirectory">
-            <summary>
-            CombineMSNDirectory, is to combine 2 both MSN directory.
-            </summary>
-            <remarks>
-            It will  fit to 2 cases:
-            1. Directory and directory
-            2. Directory and file
-            </remarks>
-        </member>
-        <member name="M:MSN.Core.CombineMSNDirectory.#ctor(MSN.Core.MSNFILESTRUCT,MSN.Core.MSNFILESTRUCT,MSN.Core.MSNFILESTRUCT,System.String)">
-            <summary>
-            Construction.
-            </summary>
-            <param name="path1">The path of file/directory 1.</param>
-            <param name="path2">The path of file/directory 2</param>
-            <param name="savedPath">The saved path.</param>
-            <param name="XslPath">The XSL file path.</param>
-        </member>
-        <member name="M:MSN.Core.CombineMSNDirectory.#ctor(MSN.Core.MSNFILESTRUCT,MSN.Core.MSNFILESTRUCT,MSN.Core.MSNFILESTRUCT)">
-            <summary>
-            Construction.
-            </summary>
-            <param name="path1">The path of file/directory 1.</param>
-            <param name="path2">The path of file/directory 2</param>
-            <param name="savedPath">The saved path.</param>
-        </member>
-        <member name="M:MSN.Core.CombineMSNDirectory.Process">
-            <summary>
-            To process and combine MSN chat  histories.
-            </summary>
-            <returns>
-            Return true if success, otherwise false.
-            </returns>
-        </member>
-        <member name="M:MSN.Core.CombineMSNDirectory.Check">
-            <summary>
-            To validate files/directories
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:MSN.Core.CombineMSNDirectory.IsExisting(System.String)">
-            <summary>
-            Check the specified path is existing.
-            </summary>
-            <param name="path">The path to check</param>
-            <returns>
-            Return true if the path is valid, otherwise false 
-            </returns>
-        </member>
-        <member name="M:MSN.Core.CombineMSNDirectory.GetSubFiles(System.String)">
-            <summary>
-            Load all files in the directory
-            </summary>
-            <param name="dirPath"></param>
-            <returns></returns>
-        </member>
-        <member name="P:MSN.Core.CombineMSNDirectory.OnSetProgressText">
-            <summary>
-            A delegate . 
-            To set the progress text to display for users.
             </summary>
         </member>
     </members>
